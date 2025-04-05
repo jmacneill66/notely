@@ -17,3 +17,11 @@ jobs:
               
           - name: Build
             run : scripts/buildprod.sh
+
+          - name: Set up gcloud
+            uses: google-github-actions/setup-gcloud@v2
+            with:
+              version: 'latest'
+              project_id: secrets.notely-455909
+              service_account_key: secrets.GCP_CREDENTIALS
+              export_default_credentials: true
